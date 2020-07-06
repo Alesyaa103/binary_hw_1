@@ -1,0 +1,398 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@import './_variables.scss';
+@import './_animations.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 150vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  z-index: 2;
+  justify-content: space-between;
+  background-color: $plain;
+  padding: 10px 9%;
+  position: fixed;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  animation-name: pullDown;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+
+  &__logo {
+    font-size: 32px;
+    display: inline-flex;
+    align-items: baseline;
+    font-weight: 700;
+
+    &--dot {
+      font-size: 25px;
+      display: inline-block;
+      position: relative;
+
+      &::after {
+        height: 5px;
+        width: 5px;
+        display: inline-block;
+        position: absolute;
+        top: 5px;
+      }
+    }
+
+    &--wrapped {
+      display: flex;
+      height: 38%;
+      flex-direction: column;
+      font-size: 13px;
+      line-height: 0.9;
+      align-self: center;
+      padding-left: 7px;
+      color: $secondary;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &__bell {
+    color: $secondary;
+
+    &:hover {
+      color: $dark-secondary;
+    }
+  }
+
+  &__avatar {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: $ochre;
+    color: $plain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+
+    &--letter {
+      font-size: 28px;
+    }
+  }
+
+  &__check {
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 48px;
+
+    &:hover~.menu__avatar {
+      background-color: #efa010;
+    }
+  }
+
+  .menu__profile {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 45px;
+    width: max-content;
+    height: 95px;
+    z-index: 2;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 15px;
+    background-color: $plain;
+    box-shadow: 0px -1px 5px 0px rgba(0, 0, 0, 0.75);
+    font-size: 13px;
+
+    &--secondary {
+      width: 100%;
+      color: $secondary;
+      letter-spacing: 0.8px;
+      margin-bottom: 4px;
+      border-bottom: 1px solid $secondary;
+    }
+
+    &--primary {
+      color: $primary;
+      text-decoration: none;
+      font-weight: 600;
+      width: 100%;
+
+      &:hover {
+        background-color: $bg;
+      }
+    }
+  }
+
+  &__check:checked~.menu__profile {
+    display: flex;
+  }
+
+}
+
+.container {
+  z-index: 0;
+  padding: 7% 10%;
+  flex-grow: 3;
+  width: 100%;
+  background-color: $bg;
+  display: grid;
+  grid-template-columns: 3fr 3fr 6fr;
+}
+
+.column1 {
+  display: grid;
+  grid-template-rows: 6fr 6fr;
+}
+
+.column2 {
+  display: grid;
+  grid-template-rows: 9fr 3fr;
+
+}
+
+.column3 {
+  display: grid;
+  grid-template-rows: 4fr 8fr;
+}
+
+.column4 {
+  display: grid;
+  grid-template-rows: 5fr 5fr 2fr;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+}
+
+.block {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  &:hover {
+    & .block__content {
+      z-index: 1;
+    }
+  }
+  &__wrapper {
+    flex-basis: 100%;
+    padding: 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 3.5rem;
+    backface-visibility: hidden;
+  }
+
+  &__title {
+    color: $plain;
+    font-weight: 500;
+    backface-visibility: hidden;
+    &--primary {
+      color: $primary;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $plain;
+    width: 100%;
+    height: 100%;
+    color: black;
+    padding: 2%;
+    font-size: 1rem;
+    overflow-y: scroll;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    z-index: -1;
+  }
+
+  & .centred {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  & ::-webkit-scrollbar {
+    display: none;
+  }
+
+  &__button {
+    width: 100px;
+    height: 50px;
+    border-radius: 4px;
+    background-color: royalblue;
+    color: $plain;
+    border: none;
+    outline: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+
+    &:hover {
+      background-color: blue;
+    }
+
+  }
+}
+
+.article0 {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition-duration: 1s;
+  &:hover {
+    transform: rotateY(180deg);
+  }
+  & .block__content {
+    transform: rotateY(180deg);
+  }
+}
+
+.article1 {
+  &:hover {
+    .block__content {
+    transform: scale(1.0, 1.0);
+    }
+  }
+  & .block__content {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition-duration: 1s;
+    transform: scale(0.0001, 0.0001);
+  }
+}
+
+.article2, .article3 {
+  & .block__wrapper {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition-duration: 1s;
+    z-index: 4;
+  }
+}
+
+.article2 {
+  &:hover {
+    .block__wrapper {
+      transform: scale(0.0001, 0.0001);
+      transform: rotateY(180deg);
+      }
+  }
+}
+
+.article3 {
+  &:hover {
+    .block__wrapper {
+      opacity: 0;
+    }
+  }
+}
+
+.block0 {
+  background-color: $plain;
+
+  &__logo {
+    width: 80%;
+    height: auto;
+  }
+}
+
+.block1 {
+  background-color: green;
+}
+
+.block2 {
+  background-color: $ochre;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  & .block__title--primary {
+    font-weight: 700;
+    font-size: 4.5rem;
+  }
+}
+
+.block3 {
+  background-color: $danger;
+
+  & .block__title {
+    font-size: 2rem;
+  }
+}
+
+.block4 {
+  background-color: pink;
+  &:hover {
+    animation: blink 1s ease-in;
+  }
+  & .block__title--primary {
+    font-style: italic;
+    font-weight: 600;
+  }
+}
+
+.block5 {
+  background-color: purple;
+}
+
+.block6 {
+  background-color: royalblue;
+
+  & .block__title {
+    font-size: 1rem;
+  }
+}
+
+.block7 {
+  background-color: blue;
+
+  & .block__title {
+    font-size: 1rem;
+  }
+}
+
+.block8 {
+  background-color: mediumblue;
+
+  & .block__title {
+    font-size: 1rem;
+  }
+}
+
+.footer {
+  width: 100%;
+  padding: 10px 10%;
+  background-color: $bg;
+  text-align: center;
+}
+
+.social-media {
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  align-items: center;
+}

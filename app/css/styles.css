@@ -1,0 +1,306 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@keyframes pullDown {
+  0% {
+    top: -60px; }
+  100% {
+    top: 0; } }
+
+@keyframes blik {
+  0% {
+    opacity: .5;
+    background: rgba(213, 156, 34, 0.2); }
+  40% {
+    opacity: 1;
+    background: rgba(213, 34, 160, 0.2); }
+  100% {
+    width: 200%;
+    height: 200%;
+    opacity: 0; } }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  width: 100vw;
+  height: 150vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column; }
+
+.header {
+  display: flex;
+  z-index: 2;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 10px 9%;
+  position: fixed;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  animation-name: pullDown;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out; }
+  .header__logo {
+    font-size: 32px;
+    display: inline-flex;
+    align-items: baseline;
+    font-weight: 700; }
+    .header__logo--dot {
+      font-size: 25px;
+      display: inline-block;
+      position: relative; }
+      .header__logo--dot::after {
+        height: 5px;
+        width: 5px;
+        display: inline-block;
+        position: absolute;
+        top: 5px; }
+    .header__logo--wrapped {
+      display: flex;
+      height: 38%;
+      flex-direction: column;
+      font-size: 13px;
+      line-height: 0.9;
+      align-self: center;
+      padding-left: 7px;
+      color: #ccc;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 3px; }
+
+.menu {
+  display: flex;
+  align-items: center;
+  position: relative; }
+  .menu__bell {
+    color: #ccc; }
+    .menu__bell:hover {
+      color: grey; }
+  .menu__avatar {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: orange;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px; }
+    .menu__avatar--letter {
+      font-size: 28px; }
+  .menu__check {
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 48px; }
+    .menu__check:hover ~ .menu__avatar {
+      background-color: #efa010; }
+  .menu .menu__profile {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 45px;
+    width: max-content;
+    height: 95px;
+    z-index: 2;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0px -1px 5px 0px rgba(0, 0, 0, 0.75);
+    font-size: 13px; }
+    .menu .menu__profile--secondary {
+      width: 100%;
+      color: #ccc;
+      letter-spacing: 0.8px;
+      margin-bottom: 4px;
+      border-bottom: 1px solid #ccc; }
+    .menu .menu__profile--primary {
+      color: black;
+      text-decoration: none;
+      font-weight: 600;
+      width: 100%; }
+      .menu .menu__profile--primary:hover {
+        background-color: #f9f9f9; }
+  .menu__check:checked ~ .menu__profile {
+    display: flex; }
+
+.container {
+  z-index: 0;
+  padding: 7% 10%;
+  flex-grow: 3;
+  width: 100%;
+  background-color: #f9f9f9;
+  display: grid;
+  grid-template-columns: 3fr 3fr 6fr; }
+
+.column1 {
+  display: grid;
+  grid-template-rows: 6fr 6fr; }
+
+.column2 {
+  display: grid;
+  grid-template-rows: 9fr 3fr; }
+
+.column3 {
+  display: grid;
+  grid-template-rows: 4fr 8fr; }
+
+.column4 {
+  display: grid;
+  grid-template-rows: 5fr 5fr 2fr; }
+
+.row {
+  display: grid;
+  grid-template-columns: 7fr 5fr; }
+
+.block {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative; }
+  .block:hover .block__content {
+    z-index: 1; }
+  .block__wrapper {
+    flex-basis: 100%;
+    padding: 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 3.5rem;
+    backface-visibility: hidden; }
+  .block__title {
+    color: #fff;
+    font-weight: 500;
+    backface-visibility: hidden; }
+    .block__title--primary {
+      color: black; }
+  .block__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    color: black;
+    padding: 2%;
+    font-size: 1rem;
+    overflow-y: scroll;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    z-index: -1; }
+  .block .centred {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .block ::-webkit-scrollbar {
+    display: none; }
+  .block__button {
+    width: 100px;
+    height: 50px;
+    border-radius: 4px;
+    background-color: royalblue;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem; }
+    .block__button:hover {
+      background-color: blue; }
+
+.article0 {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition-duration: 1s; }
+  .article0:hover {
+    transform: rotateY(180deg); }
+  .article0 .block__content {
+    transform: rotateY(180deg); }
+
+.article1:hover .block__content {
+  transform: scale(1, 1); }
+
+.article1 .block__content {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition-duration: 1s;
+  transform: scale(0.0001, 0.0001); }
+
+.article2 .block__wrapper, .article3 .block__wrapper {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition-duration: 1s;
+  z-index: 4; }
+
+.article2:hover .block__wrapper {
+  transform: scale(0.0001, 0.0001);
+  transform: rotateY(180deg); }
+
+.article3:hover .block__wrapper {
+  opacity: 0; }
+
+.block0 {
+  background-color: #fff; }
+  .block0__logo {
+    width: 80%;
+    height: auto; }
+
+.block1 {
+  background-color: green; }
+
+.block2 {
+  background-color: orange;
+  justify-content: flex-end;
+  align-items: flex-end; }
+  .block2 .block__title--primary {
+    font-weight: 700;
+    font-size: 4.5rem; }
+
+.block3 {
+  background-color: red; }
+  .block3 .block__title {
+    font-size: 2rem; }
+
+.block4 {
+  background-color: pink; }
+  .block4:hover {
+    animation: blink 1s ease-in; }
+  .block4 .block__title--primary {
+    font-style: italic;
+    font-weight: 600; }
+
+.block5 {
+  background-color: purple; }
+
+.block6 {
+  background-color: royalblue; }
+  .block6 .block__title {
+    font-size: 1rem; }
+
+.block7 {
+  background-color: blue; }
+  .block7 .block__title {
+    font-size: 1rem; }
+
+.block8 {
+  background-color: mediumblue; }
+  .block8 .block__title {
+    font-size: 1rem; }
+
+.footer {
+  width: 100%;
+  padding: 10px 10%;
+  background-color: #f9f9f9;
+  text-align: center; }
+
+.social-media {
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  align-items: center; }

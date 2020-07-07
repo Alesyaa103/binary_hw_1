@@ -13,8 +13,7 @@
   opacity: 0.6;
   border-radius: 4px;
   padding: 15px 10px;
-  display: inline-grid;
-  grid-template-columns: 2fr 10fr;
+  display: flex;
   align-items: center;
 
   &__sign {
@@ -25,13 +24,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 10px;
   }
 
   &__desc {
     color: $plain;
     display: flex;
     flex-direction: column;
+    margin-left: 10px;
   }
 }
 

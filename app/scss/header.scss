@@ -24,11 +24,12 @@
       position: relative;
 
       &::after {
-        height: 5px;
-        width: 5px;
+        content: '\2022';
+        top: -15px;
+        left: -2px;
         display: inline-block;
         position: absolute;
-        top: 5px;
+        color: $ochre;
       }
     }
 

@@ -25,11 +25,12 @@
       display: inline-block;
       position: relative; }
       .header__logo--dot::after {
-        height: 5px;
-        width: 5px;
+        content: '\2022';
+        top: -15px;
+        left: -2px;
         display: inline-block;
         position: absolute;
-        top: 5px; }
+        color: #F7CF69; }
     .header__logo--wrapped {
       display: flex;
       height: 38%;
@@ -393,8 +394,7 @@
   opacity: 0.6;
   border-radius: 4px;
   padding: 15px 10px;
-  display: inline-grid;
-  grid-template-columns: 2fr 10fr;
+  display: flex;
   align-items: center; }
   .notification__sign {
     width: 18px;
@@ -403,12 +403,12 @@
     background-color: #fff;
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-right: 10px; }
+    align-items: center; }
   .notification__desc {
     color: #fff;
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    margin-left: 10px; }
 
 .danger {
   background-color: #E12B4C; }

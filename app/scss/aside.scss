@@ -1,0 +1,56 @@
+@import './_variables.scss';
+
+.aside {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 200px;
+  z-index: 3;
+}
+
+.notification {
+  margin: 10px;
+  opacity: 0.6;
+  border-radius: 4px;
+  padding: 15px 10px;
+  display: inline-grid;
+  grid-template-columns: 2fr 10fr;
+  align-items: center;
+
+  &__sign {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: $plain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+  }
+
+  &__desc {
+    color: $plain;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.danger {
+  background-color: $danger;
+
+  & .sign {
+    color: $danger;
+  }
+}
+
+.sign {
+  color: $plain;
+}
+
+.warning {
+  background-color: $ochre;
+}
+
+.success {
+  background-color: $success;
+}

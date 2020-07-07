@@ -1,0 +1,154 @@
+@import './_variables.scss';
+
+.container {
+  padding: 120px 10%;
+  flex-grow: 3;
+  width: 100%;
+  background-color: $bg;
+  display: grid;
+  grid-template-columns: repeat(24, 0.5fr);
+  grid-template-rows: repeat(12, 60px);
+  position: relative;
+}
+
+.article0 {
+  grid-column: span 6;
+  grid-row: span 6;
+}
+
+.article2 {
+  grid-column: span 6;
+  grid-row: span 9;
+}
+
+.column4 {
+  grid-row: span 8;
+  grid-column: span 5;
+  position: absolute;
+  right: 10%;
+  bottom: 120px;
+  height: 360px;
+  width: 17%;
+  display: grid;
+  grid-template-rows: 5fr 5fr 2fr;
+}
+
+.article3 {
+  grid-row: span 3;
+  grid-column: span 6;
+}
+
+.article4 {
+  grid-column: span 12;
+  grid-row: span 6;
+}
+
+.article1 {
+  grid-column: span 6;
+  grid-row: span 6;
+}
+
+.article5 {
+  grid-column: span 7;
+  grid-row: span 6;
+}
+
+.block {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+
+  &__logo {
+    width: 80%;
+    height: auto;
+  }
+
+  &__wrapper {
+    flex-basis: 100%;
+    padding: 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 3.5rem;
+    backface-visibility: hidden;
+    z-index: 3;
+  }
+
+  &__title {
+    color: $plain;
+    font-weight: 500;
+    backface-visibility: hidden;
+
+    &--primary {
+      color: $primary;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $plain;
+    width: 100%;
+    height: 100%;
+    color: black;
+    padding: 2%;
+    font-size: 1rem;
+    overflow-y: auto;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    z-index: 0;
+  }
+
+  & .centred {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__button {
+    width: 100px;
+    height: 50px;
+    border-radius: 4px;
+    background-color: royalblue;
+    color: $plain;
+    border: none;
+    outline: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+
+    &:hover {
+      background-color: blue;
+    }
+
+  }
+}
+
+.social-media {
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  align-items: center;
+
+  &__item:hover {
+    fill: royalblue;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 768px ) {
+  .column4 {
+    position: static;
+    width: 100%;
+  }
+  .article0, .article2, .column4 {
+    grid-column: span 8;
+    grid-row: span 6;
+  }
+  .article1, .article3, .article5, .article4 {
+    grid-column: span 12;
+    grid-row: span 3;
+  }
+}

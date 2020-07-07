@@ -1,0 +1,133 @@
+@import './_animations.scss';
+@import './_variables.scss';
+
+.header {
+  display: flex;
+  z-index: 4;
+  justify-content: space-between;
+  background-color: $plain;
+  padding: 10px 10%;
+  position: fixed;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  animation: pullDown 1s ease-in-out;
+
+  &__logo {
+    font-size: 32px;
+    display: inline-flex;
+    align-items: baseline;
+    font-weight: 700;
+
+    &--dot {
+      font-size: 25px;
+      display: inline-block;
+      position: relative;
+
+      &::after {
+        height: 5px;
+        width: 5px;
+        display: inline-block;
+        position: absolute;
+        top: 5px;
+      }
+    }
+
+    &--wrapped {
+      display: flex;
+      height: 38%;
+      flex-direction: column;
+      font-size: 13px;
+      line-height: 0.9;
+      align-self: center;
+      padding-left: 7px;
+      color: $secondary;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &__bell {
+    color: $secondary;
+
+    &:hover {
+      color: $dark-secondary;
+    }
+  }
+
+  &__avatar {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: $ochre;
+    color: $plain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+
+    &--letter {
+      font-size: 28px;
+    }
+  }
+
+  &__check {
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 48px;
+
+    &:hover~.menu__avatar {
+      background-color: #F8991C;
+    }
+  }
+
+  .menu__profile {
+    display: none;
+    position: absolute;
+    right: -5px;
+    top: 50px;
+    width: max-content;
+    height: 95px;
+    z-index: 2;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 15px;
+    background-color: $plain;
+    box-shadow: 0px -1px 5px 0px rgba(0, 0, 0, 0.75);
+    font-size: 13px;
+
+    &--secondary {
+      width: 100%;
+      color: $secondary;
+      letter-spacing: 0.8px;
+      margin-bottom: 4px;
+      border-bottom: 1px solid $secondary;
+    }
+
+    &--primary {
+      color: $primary;
+      text-decoration: none;
+      font-weight: 600;
+      width: 100%;
+
+      &:hover {
+        background-color: $bg;
+      }
+    }
+  }
+
+  &__check:checked~.menu__profile {
+    display: flex;
+  }
+
+}

@@ -6,20 +6,3 @@
     top: 0;
   }
 }
-
-@keyframes blik {
-  0% {
-		opacity: .5;
-    background: rgba(213,156,34,.2);
-    
-	}
-	40% {
-		opacity: 1;
-    background: rgba(213,34,160,.2);
-	}
-	100% {
-		width: 200%;
-		height: 200%;
-		opacity: 0;
-	}
-} 

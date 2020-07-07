@@ -1,0 +1,171 @@
+@import './_variables.scss';
+
+.article4,
+.article0 {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition-duration: 1s;
+}
+
+.article0 {
+  & .block__wrapper {
+    background-color: $plain;
+  }
+
+  &:hover {
+    transform: rotateY(180deg);
+  }
+
+  & .block__content {
+    transform: rotateY(180deg);
+  }
+}
+
+.article1 {
+  &:hover {
+    .block__content {
+      transform: scale(1.0, 1.0);
+    }
+  }
+
+  & .block__wrapper {
+    background-color: $success;
+  }
+
+  & .block__content {
+    z-index: 4;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition-duration: 1s;
+    transform: scale(0.0001, 0.0001);
+  }
+}
+
+.article2,
+.article3,
+.article5,
+.article6,
+.article7,
+.article8 {
+  overflow: hidden;
+
+  & .block__wrapper {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition-duration: 1s;
+  }
+}
+
+.article2 {
+  .block__wrapper {
+    background-color: $ochre;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    & .block__title--primary {
+      font-weight: 700;
+      font-size: 4.5rem;
+    }
+  }
+
+  &:hover {
+    .block__wrapper {
+      transform: scale(0.0001, 0.0001);
+      transform: rotateY(180deg);
+    }
+  }
+}
+
+.article3 {
+  .block__wrapper {
+    background-color: $danger;
+
+    & .block__title {
+      font-size: 2rem;
+    }
+  }
+
+  &:hover {
+    .block__wrapper {
+      opacity: 0;
+    }
+  }
+}
+
+.article4 {
+  & .block__wrapper {
+    background-color: #8893C0;
+
+    & .block__title--primary {
+      font-style: italic;
+      font-weight: 600;
+    }
+  }
+
+  &:hover {
+    transform: rotateX(180deg);
+  }
+
+  & .block__content {
+    transform: rotateX(180deg);
+  }
+}
+
+.article5 {
+  & .block__wrapper {
+    background-color: #642077;
+  }
+
+  &:hover {
+    .block__wrapper {
+      transform: translate(100%);
+      transform: scaleY(0.0);
+    }
+  }
+}
+
+.article6,
+.article7,
+.article8 {
+  & .block__title {
+    font-size: 1rem;
+  }
+}
+
+.article6 {
+  & .block__wrapper {
+    background-color: #2D99FF;
+  }
+
+  &:hover {
+    .block__wrapper {
+      transform: translateY(-100%);
+    }
+  }
+}
+
+.article7 {
+  & .block__wrapper {
+    z-index: 2;
+    background-color: #0443A3;
+  }
+
+  &:hover {
+    .block__wrapper {
+      transform: translateX(-100%);
+    }
+  }
+}
+
+.article8 {
+  & .block__wrapper {
+    background-color: #00265F;
+    z-index: 1;
+  }
+
+  &:hover {
+    .block__wrapper {
+      transform: translate(-100%, -100%);
+    }
+  }
+}
